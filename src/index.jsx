@@ -1,5 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Combat from './components/combat';
+import Wielder from './components/wielder';
+import Weapon from './components/weapon';
+import Map from './components/map';
 
 class Container extends React.Component {
   constructor(props) {
@@ -17,11 +21,10 @@ class Container extends React.Component {
   render() {
     return (
       <div>
-        Modules:
-        Combat
-        Wielder Character Sheet
-        Weapon Character Sheet
-        Map
+        <Combat />
+        <Wielder />
+        <Weapon />
+        <Map />
       </div>
     )
   }
