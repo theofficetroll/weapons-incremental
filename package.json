@@ -1,0 +1,40 @@
+{
+  "name": "weapons-incremental",
+  "version": "1.0.0",
+  "description": "Incremental Game by Mark Scrudder",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --detectOpenHandles",
+    "react-dev": "webpack -d --watch",
+    "server-dev": "nodemon server/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/theofficetroll/weapons-incremental.git"
+  },
+  "author": "Mark Scrudder",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/theofficetroll/weapons-incremental/issues"
+  },
+  "homepage": "https://github.com/theofficetroll/weapons-incremental#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.5",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-cli": "^6.26.0",
+    "babel-jest": "^26.5.2",
+    "babel-loader": "^8.1.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-react-app": "^9.1.2",
+    "jest": "^26.5.3",
+    "puppeteer": "^5.3.1",
+    "react-hot-loader": "^4.13.0",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12"
+  }
+}
