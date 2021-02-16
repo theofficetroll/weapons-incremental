@@ -16,7 +16,7 @@ class Weapon extends React.Component {
 
   render () {
     return (
-      <div>
+      <div className="weapon">
         <div className="stats">
           Willpower: {this.props.willpower}
           MP: {this.props.mp}

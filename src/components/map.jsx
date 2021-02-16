@@ -13,8 +13,8 @@ class Map extends React.Component {
 
   render () {
     return (
-      <div>
-        Map
+      <div className="map">
+        Map Pane
       </div>
     )
   }

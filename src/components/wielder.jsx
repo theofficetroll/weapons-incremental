@@ -11,7 +11,7 @@ class Wielder extends React.Component {
 
   render () {
     return (
-      <div>
+      <div className="wielder">
         Name: {this.props.name}
         Strength: {this.props.strength}
         Hit Points: {this.props.hp}

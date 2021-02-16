@@ -4,7 +4,7 @@ import React from 'react';
 // Will show wielder and opponent
 // This will contain all timing?
 
-class Combat extends React.Component {
+class actionButton extends React.Component {
   constructor (props) {
     super (props);
     this.state = {
@@ -14,11 +14,11 @@ class Combat extends React.Component {
 
   render () {
     return (
-      <div className="combat">
-        Combat Pane
+      <div className="button action">
+        Button
       </div>
     )
   }
 }
 
-export default Combat;
+export default actionButton;

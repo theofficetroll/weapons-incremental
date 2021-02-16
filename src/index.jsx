@@ -11,16 +11,24 @@ class Container extends React.Component {
     this.state = {
       //
     }
-    // this.anyMethod = this.anyMethod.bind(this)
+    this.handleClick = this.handleClick.bind(this);
   }
 
-  componentDidMount() {
-    // anything to run after first render
+  handleClick = (e) => {
+    e.preventDefault();
+    switch (command) {
+      case 'test':
+        console.log('test');
+        break;
+      default:
+        console.log('no specific command');
+        break;
+    }
   }
 
   render() {
     return (
-      <div>
+      <div className="game">
         <Combat />
         <Wielder />
         <Weapon />
