@@ -1,0 +1,52 @@
+.container {
+  margin: 1rem;
+  font-family: "Sofia Pro", "Helvetica Neue", Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #d8d8da;
+  background-color: #31343C;
+}
+.combat {
+  width: 500px;
+  margin: 13px 10px 0;
+  position: relative;
+  align-self: baseline;
+  padding: 0;
+  text-align: left;
+  border: 1px solid #414c69;
+}
+.wielder {
+  width: 500px;
+  margin: 13px 10px 0;
+  position: relative;
+  align-self: baseline;
+  padding: 0;
+  text-align: left;
+  border: 1px solid #414c69;
+}
+.weapon {
+  width: 500px;
+  margin: 13px 10px 0;
+  position: relative;
+  align-self: baseline;
+  padding: 0;
+  text-align: left;
+  border: 1px solid #414c69;
+}
+.map {
+  width: 500px;
+  margin: 13px 10px 0;
+  position: relative;
+  align-self: baseline;
+  padding: 0;
+  text-align: left;
+  border: 1px solid #414c69;
+}
+.button {
+  padding: 0 15px;
+  color: blue;
+  display: inline-block;
+  height: 50px;
+  line-height: 50px;
+  box-sizing: border-box;
+}

@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import ls from 'local-storage';
+import './index.css';
 
 // components
 import Combat from './components/combat.jsx';
@@ -23,7 +24,7 @@ class Container extends React.Component {
         damageBonus: 0,
         name: 'Bob',
         race: "human",
-        clasS: "fighter",
+        class: "fighter",
       },
       opponent: {
         xp: 0,
@@ -37,8 +38,9 @@ class Container extends React.Component {
       },
       weapon: {
         xp: 0,
-        mp: 10,
-        active: [],
+        willpower: 10,
+        willpowerMax: 10,
+        active: ["Puissance"],
         passive: [],
         title: '',
       },

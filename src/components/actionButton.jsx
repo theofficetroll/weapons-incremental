@@ -15,7 +15,7 @@ class actionButton extends React.Component {
   render () {
     return (
       <div className="button action">
-        Button
+        {this.props.action}
       </div>
     )
   }

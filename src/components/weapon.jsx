@@ -15,17 +15,24 @@ class Weapon extends React.Component {
     super (props);
   }
 
+  // TODO
+  // The Action will need to be mapped once implemented
   render () {
     return (
       <div className="weapon">
         <div className="stats">
-          Willpower: {this.props.willpower}
-          MP: {this.props.mp}
+          Willpower: {this.props.weapon.willpower} / {this.props.weapon.willpowerMax}
+          <br />
+          <br />
+          Title: {this.props.weapon.title}
+          <br />
         </div>
         <br />
         <div className="actions">
-          <Action />
-          Puissance - This needs to be a clickable button with a cooldown
+          <Action action={this.props.weapon.active}/>
+        </div>
+        <div className="passives">
+          Passive?
         </div>
         <br />
         <div className="upgrades">
