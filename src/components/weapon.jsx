@@ -18,18 +18,19 @@ class Weapon extends React.Component {
   // TODO
   // The Action will need to be mapped once implemented
   render () {
+    const { willpower, willpowerMax, title, active } = this.props.weapon;
     return (
       <div className="weapon">
         <div className="stats">
-          Willpower: {this.props.weapon.willpower} / {this.props.weapon.willpowerMax}
+          Willpower: {willpower} / {willpowerMax}
           <br />
           <br />
-          Title: {this.props.weapon.title}
+          Title: {title}
           <br />
         </div>
         <br />
         <div className="actions">
-          <Action action={this.props.weapon.active}/>
+          <Action action={active}/>
         </div>
         <div className="passives">
           Passive?

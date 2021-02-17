@@ -24,7 +24,7 @@ class Container extends React.Component {
         damageBonus: 0,
         name: 'Bob',
         race: "human",
-        class: "fighter",
+        charClass: "fighter",
       },
       opponent: {
         xp: 0,
@@ -34,7 +34,7 @@ class Container extends React.Component {
         damageBonus: 0,
         name: 'Gnash',
         race: "goblin",
-        clasS: "fighter",
+        charClass: "fighter",
       },
       weapon: {
         xp: 0,
