@@ -1,5 +1,5 @@
 import React from 'react';
-import Action from './actionButton';
+import Action from './actionButton.jsx';
 
 // This is the character sheet for the weapon
 // Shows current stats of weapon
@@ -24,6 +24,7 @@ class Weapon extends React.Component {
         </div>
         <br />
         <div className="actions">
+          <Action />
           Puissance - This needs to be a clickable button with a cooldown
         </div>
         <br />

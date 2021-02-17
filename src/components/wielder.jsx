@@ -13,12 +13,14 @@ class Wielder extends React.Component {
     return (
       <div className="wielder">
         Name: {this.props.name}
-        Strength: {this.props.strength}
+        Race: {this.props.race}
+        Class: {this.props.class}
+        Strength: {this.props.damageBonus}
         Hit Points: {this.props.hp}
         Accuracy: {this.props.accuracy}
-        Damage: {this.props.damage}
         Speed: {this.props.speed}
         Level: {this.props.level}
+        Experience: {this.props.xp}
       </div>
     )
   }

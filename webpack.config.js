@@ -1,7 +1,8 @@
 module.exports = {
   entry: `./src/index.jsx`,
   output: {
-    filename: './static/js/bundle.js'
+    filename: 'bundle.js',
+    path: __dirname + '/public'
   },
   module: {
     rules: [
@@ -10,7 +11,13 @@ module.exports = {
         loader: 'babel-loader',
         exclude: /node_modules/,
         query: {
-          presets: ['react']
+          presets: [
+            ['@babel/preset-react'],
+            ['@babel/preset-env'],
+          ],
+          plugins: [
+            "@babel/plugin-proposal-class-properties"
+        ]
         }
       }
     ]

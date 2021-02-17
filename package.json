@@ -19,6 +19,8 @@
   },
   "homepage": "https://github.com/theofficetroll/weapons-incremental#readme",
   "dependencies": {
+    "@babel/preset-env": "^7.12.16",
+    "@babel/preset-react": "^7.12.13",
     "express": "^4.17.1",
     "local-storage": "^2.0.0",
     "nodemon": "^2.0.5",
