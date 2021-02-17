@@ -50,3 +50,10 @@
   line-height: 50px;
   box-sizing: border-box;
 }
+.progress-bar {
+  height: 20px;
+  width: 200px;
+  background-color: #e0e0de;
+  border-radius: 50px;
+  margin: 50px;
+}

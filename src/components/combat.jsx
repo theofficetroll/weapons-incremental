@@ -1,4 +1,5 @@
 import React from 'react';
+import ProgressBar from './progressBar.jsx';
 
 // This handles the combat screen for the game
 // Will show wielder and opponent
@@ -7,15 +8,14 @@ import React from 'react';
 class Combat extends React.Component {
   constructor (props) {
     super (props);
-    this.state = {
-      //
-    }
   }
 
   render () {
     return (
       <div className="combat">
-        Combat Pane
+        Combat Panel
+        <br />
+        <ProgressBar bgcolor='#6a1b9a' completed='10' />
       </div>
     )
   }
