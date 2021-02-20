@@ -5,8 +5,13 @@ import ProgressBar from './progressBar.jsx';
 // Will show wielder and opponent
 // This will contain all timing?
 
-function Combat() {
+const Combat = (props) => {
+  const { wielder, opponent, weapon } = props;
+
   const [completed, setCompleted] = useState(0);
+
+  // Set interval based on an assumed value of speed range 0-99
+  const [ wielderInterval ] = useState((100 - wielder.speed) * 10);
 
   const combatStyles = {
     textAlign: 'center',
@@ -14,7 +19,19 @@ function Combat() {
   }
 
   useEffect(() => {
-    setInterval(() => setCompleted(Math.floor(Math.random() * 100) + 1), 1000);
+    const interval = setInterval(() => {
+      setCompleted(oldValue => {
+        let newValue = oldValue + 10;
+
+        if (newValue > 100) {
+          // Trigger attack
+
+          // Reset value to 0
+          newValue = 0;
+        }
+        return newValue;
+      });
+    }, wielderInterval);
   }, []);
 
   return (

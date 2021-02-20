@@ -11,11 +11,14 @@ const ProgressBar = (props) => {
     margin: 50,
   }
 
+  // TODO
+  // The transition gets fugly because it doesn't scale with speed
+  // Probably need a custom bezier curve
   const fillerStyles = {
     height: '100%',
     width: `${completed}%`,
     backgroundColor: bgcolor,
-    transition: 'width 1s ease-in-out',
+    transition: 'width .5s linear',
     borderRadius: 'inherit',
     textAlign: 'right',
   }
