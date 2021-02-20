@@ -30,7 +30,6 @@ const ProgressBar = (props) => {
   }
 
   return (
-    // <progress className='progress-bar' value={completed} max='100' />
     <div style={containerStyles}>
       <div style={fillerStyles}>
         <span style={labelStyles}>{`${completed}%`}</span>
