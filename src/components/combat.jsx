@@ -10,7 +10,8 @@ import ProgressBar from './progressBar.jsx';
 const Combat = (props) => {
   const { wielder, opponent, weapon } = props;
 
-  const [ wielderCompleted, setWielderCompleted, opponentCompleted, setOpponentCompleted ] = useState(0);
+  const [ wielderCompleted, setWielderCompleted ] = useState(0);
+  const [ opponentCompleted, setOpponentCompleted ] = useState(0);
 
   // Set interval based on an assumed value of speed range 0-99
   const [ wielderInterval ] = useState((100 - wielder.speed) * 10);
@@ -33,7 +34,7 @@ const Combat = (props) => {
 
   // Wielder progress bar
   useEffect(() => {
-    const interval = setInterval(() => {
+    setInterval(() => {
       setWielderCompleted(oldValue => {
         let newValue = oldValue + 10;
 
@@ -48,22 +49,22 @@ const Combat = (props) => {
     }, wielderInterval);
   }, []);
 
-  // // Opponent progress bar
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     setOpponentCompleted(oldValue => {
-  //       let newValue = oldValue + 10;
+    // Opponent progress bar
+    useEffect(() => {
+      setInterval(() => {
+        setOpponentCompleted(oldValue => {
+          let newValue = oldValue + 10;
 
-  //       if (newValue > 100) {
-  //         // Trigger attack
+          if (newValue > 100) {
+            // Trigger attack
 
-  //         // Reset value to 0
-  //         newValue = 0;
-  //       }
-  //       return newValue;
-  //     });
-  //   }, opponentInterval);
-  // }, []);
+            // Reset value to 0
+            newValue = 0;
+          }
+          return newValue;
+        });
+      }, opponentInterval);
+    }, []);
 
   return (
     <div style={combatStyles} className="combat-panel">
@@ -73,10 +74,10 @@ const Combat = (props) => {
         Wielder Progress Bar:
         <ProgressBar bgcolor={"#6a1b9a"} completed={wielderCompleted} />
       </div>
-      {/* <div style={opponentCombatStyles} className="opponent-combat-panel">
+      <div style={opponentCombatStyles} className="opponent-combat-panel">
         Opponent Progress Bar:
         <ProgressBar bgcolor={"#6a1b9a"} completed={opponentCompleted} />
-      </div> */}
+      </div>
     </div>
   );
 }

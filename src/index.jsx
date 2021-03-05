@@ -6,6 +6,7 @@ import './index.css';
 // components
 import Combat from './components/combat.jsx';
 import Wielder from './components/wielder.jsx';
+import Opponent from './components/opponent.jsx';
 import Weapon from './components/weapon.jsx';
 import Map from './components/map.jsx';
 import actionRouter from './actions/commandRouter.js';
@@ -18,7 +19,7 @@ class Container extends React.Component {
       wielder: {
         xp: 0,
         level: 0,
-        speed: 1,
+        speed: 10,
         accuracy: 1,
         hp: 10,
         damageBonus: 0,
@@ -72,6 +73,7 @@ class Container extends React.Component {
       <div className="game">
         <Combat wielder={this.state.wielder} opponent={this.state.opponent} weapon={this.state.weapon} />
         <Wielder wielder={this.state.wielder} />
+        <Opponent opponent={this.state.opponent} />
         <Weapon weapon={this.state.weapon} />
         <Map />
       </div>
