@@ -9,7 +9,7 @@ import Wielder from './components/wielder.jsx';
 import Opponent from './components/opponent.jsx';
 import Weapon from './components/weapon.jsx';
 import Map from './components/map.jsx';
-import actionRouter from './actions/commandRouter.js';
+import commandRouter from './actions/commandRouter.js';
 
 class Container extends React.Component {
   constructor(props) {
@@ -17,49 +17,55 @@ class Container extends React.Component {
     this.state = {
       gameState: 'waiting',
       wielder: {
-        xp: 0,
-        level: 0,
-        speed: 10,
-        accuracy: 10,
-        hp: 10,
+        accuracy: 1,
+        charClass: 'fighter',
         damageBonus: 0,
+        defense: 0,
+        hp: 10,
+        level: 0,
         name: 'Bob',
         race: 'human',
-        charClass: 'fighter',
+        speed: 20,
+        xp: 0,
       },
       opponent: {
-        xp: 0,
-        level: 0,
-        speed: 1,
         accuracy: 1,
-        hp: 10,
-        damageBonus: 0,
-        name: 'Gnash',
-        race: 'goblin',
         charClass: 'fighter',
+        damageBonus: 1,
+        defense: 0,
+        hp: 10,
+        name: 'Gnash',
+        level: 0,
+        race: 'goblin',
+        speed: 1,
+        xp: 0,
       },
       weapon: {
-        xp: 0,
-        willpower: 10,
-        willpowerMax: 10,
+        accuracyBonus: 0,
         active: ['Puissance'],
+        damage: 1,
         passive: [],
         title: '',
+        willpower: 10,
+        willpowerMax: 10,
+        xp: 0,
       },
     };
     this.handleClick = this.handleClick.bind(this);
+    this.handleAction = this.handleAction.bind(this);
     this.saveProgress = this.saveProgress.bind(this);
     this.loadProgress = this.loadProgress.bind(this);
   }
 
+  // This may not be needed, may only need handleAction
   handleClick = (e) => {
     e.preventDefault();
-    let action = e.target.value;
-    actionRouter(action);
+    let command = e.target.value;
+    commandRouter(command);
   };
 
   handleAction = (command) => {
-    actionRouter(command);
+    commandRouter(command);
   }
 
   // This is a stub

@@ -40,7 +40,16 @@ const Combat = (props) => {
 
         if (newValue > 100) {
           // Trigger attack
-          handleAction('wielderAttack')
+          handleAction({
+            action: 'attack',
+            accuracy: wielder.accuracy,
+            accuracyBonus: weapon.accuracyBonus,
+            attacker: 'wielder',
+            damage: weapon.damage,
+            damageBonus: wielder.damageBonus,
+            defense: opponent.defense,
+            hp: opponent.hp,
+          });
 
           // Reset value to 0
           newValue = 0;
@@ -58,7 +67,16 @@ const Combat = (props) => {
 
           if (newValue > 100) {
             // Trigger attack
-            handleAction('opponentAttack');
+            handleAction({
+              action: 'attack',
+              accuracy: opponent.accuracy,
+              accuracyBonus: 0,
+              attacker: 'opponent',
+              damage: 0,
+              damageBonus: opponent.damageBonus,
+              defense: wielder.defense,
+              hp: wielder.hp,
+            });
 
             // Reset value to 0
             newValue = 0;
