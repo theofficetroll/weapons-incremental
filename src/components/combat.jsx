@@ -8,7 +8,7 @@ import ProgressBar from './progressBar.jsx';
 // Need to fix CSS, conflicting with index.css
 
 const Combat = (props) => {
-  const { wielder, opponent, weapon } = props;
+  const { wielder, opponent, weapon, handleAction } = props;
 
   const [ wielderCompleted, setWielderCompleted ] = useState(0);
   const [ opponentCompleted, setOpponentCompleted ] = useState(0);
@@ -40,6 +40,7 @@ const Combat = (props) => {
 
         if (newValue > 100) {
           // Trigger attack
+          handleAction('wielderAttack')
 
           // Reset value to 0
           newValue = 0;
@@ -57,6 +58,7 @@ const Combat = (props) => {
 
           if (newValue > 100) {
             // Trigger attack
+            handleAction('opponentAttack');
 
             // Reset value to 0
             newValue = 0;

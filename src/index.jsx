@@ -20,28 +20,29 @@ class Container extends React.Component {
         xp: 0,
         level: 0,
         speed: 10,
-        accuracy: 1,
+        accuracy: 10,
         hp: 10,
         damageBonus: 0,
         name: 'Bob',
-        race: "human",
-        charClass: "fighter",
+        race: 'human',
+        charClass: 'fighter',
       },
       opponent: {
         xp: 0,
         level: 0,
         speed: 1,
+        accuracy: 1,
         hp: 10,
         damageBonus: 0,
         name: 'Gnash',
-        race: "goblin",
-        charClass: "fighter",
+        race: 'goblin',
+        charClass: 'fighter',
       },
       weapon: {
         xp: 0,
         willpower: 10,
         willpowerMax: 10,
-        active: ["Puissance"],
+        active: ['Puissance'],
         passive: [],
         title: '',
       },
@@ -57,6 +58,10 @@ class Container extends React.Component {
     actionRouter(action);
   };
 
+  handleAction = (command) => {
+    actionRouter(command);
+  }
+
   // This is a stub
   // If I end up using just the main state, I can have it just save the whole thing
   // Otherwise, I'll want to save individually in each place the state changes
@@ -71,7 +76,7 @@ class Container extends React.Component {
   render() {
     return (
       <div className="game">
-        <Combat wielder={this.state.wielder} opponent={this.state.opponent} weapon={this.state.weapon} />
+        <Combat wielder={this.state.wielder} opponent={this.state.opponent} handleAction={this.handleAction} weapon={this.state.weapon} />
         <Wielder wielder={this.state.wielder} />
         <Opponent opponent={this.state.opponent} />
         <Weapon weapon={this.state.weapon} />
