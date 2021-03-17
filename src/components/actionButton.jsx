@@ -1,8 +1,7 @@
 import React from 'react';
 
-// This handles the combat screen for the game
-// Will show wielder and opponent
-// This will contain all timing?
+// This will handle clickable buttons
+// This is a stub
 
 class actionButton extends React.Component {
   constructor (props) {
