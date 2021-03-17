@@ -5,25 +5,51 @@
 // Create general random number function and replace throughout
 
 const newCharacter = (oldWielder, level) => {
-  let newRace;
+
+  // choose race
   if (oldWielder.raceType === 'humanoid') {
     // TODO
     // Add map location/ level modifiers once those are implemented
     // Add race variation? If certain races never fight one another &c
-    newRace = monsterRaces[Math.floor(Math.random() * monsterRaces.length)];
+    // Add chance of non-monster races
+    let newRaceData = monsterRaces[Math.floor(Math.random() * monsterRaces.length)];
   } else {
     // TODO
     // Add map location/ level modifiers once those are implemented
     // Add race variation? If certain races never fight one another &c
-    newRace = humanoidRaces[Math.floor(Math.random() * humanoidRaces.length)];
+    // Add chance of monster races
+    let newRaceData = humanoidRaces[Math.floor(Math.random() * humanoidRaces.length)];
   }
-  let newClassName = newRace.classes[0];  // TODO currently just pulling first class
 
-  // apply both race and class modifiers to get base stats
+  // TODO choose name
+  let characterName = null;
 
-  // level up character using characterLeveler
+  // choose class
+  // TODO currently just pulling first class
+  let newClassData = newRaceData.classes[0];
 
-  // return new character
+  // apply new data to create level 0 character
+  let characterData = {
+    accuracy: newRaceData.accuracy + newClassData.accuracy,
+    charClass: newClassData.name,
+    damageBonus: newRaceData.damageBonus + newClassData.damageBonus,
+    defense: newRaceData.defense + newClassData.defense,
+    hp: newRaceData.hp + newClassData.hp,
+    level: 0,
+    name: characterName,
+    race: newRaceData.race,
+    raceType: newRaceData.raceType,
+    speed: newRaceData.speed + newClassData.speed,
+    xp: 0,
+  }
+
+  // TODO apply both race and class modifiers to get base stats
+
+
+  // TODO level up character using characterLeveler
+
+
+  return characterData;
 };
 
 // The below will be moved out to data store later
@@ -51,6 +77,7 @@ const humanoidRaces = [
     raceType: 'humanoid',
     classes: [
       'fighter',
+      'wizard',
     ],
     levelZeroStats: {
       accuracy: 3,
@@ -95,7 +122,7 @@ const classes = {
       damageBonus: 1,
       defense: 1,
       hp: 5,
-      speed: 2,
+      speed: 1,
     },
     levelModifiers: {
       // TODO Add modifiers to apply each level
@@ -110,7 +137,7 @@ const classes = {
       accuracy: 1,
       damageBonus: 1,
       defense: 1,
-      hp: 5,
+      hp: 0,
       speed: 2,
     },
     levelModifiers: {
