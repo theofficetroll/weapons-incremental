@@ -1,7 +1,13 @@
 // This will handle the leveling up of a character when reach next xp tier
 
-const characterLeveler = (characterData, level) => {
+import characterClasses from '../dataStores/characterClasses';
+import characterRaces from '../dataStores/characterRaces';
 
+// TODO
+// Everything
+
+const characterLeveler = (characterData, level) => {
+  //
 };
 
 export default characterLeveler;

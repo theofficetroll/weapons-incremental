@@ -4,9 +4,7 @@
 import leveler from './characterLeveler.js';
 import characterClasses from '../dataStores/characterClasses';
 import { humanoidRaces, monsterRaces } from '../dataStores/characterRaces';
-
-// TODO
-// Create general random number function and replace throughout
+import randomNumber from '../generalHelpers/randomizer';
 
 const newCharacter = (oldWielder, level) => {
 
@@ -16,13 +14,13 @@ const newCharacter = (oldWielder, level) => {
     // Add map location/ level modifiers once those are implemented
     // Add race variation? If certain races never fight one another &c
     // Add chance of non-monster races
-    let newRaceData = monsterRaces[Math.floor(Math.random() * monsterRaces.length)];
+    let newRaceData = monsterRaces[randomNumber(0, monsterRaces.length)];
   } else {
     // TODO
     // Add map location/ level modifiers once those are implemented
     // Add race variation? If certain races never fight one another &c
     // Add chance of monster races
-    let newRaceData = humanoidRaces[Math.floor(Math.random() * humanoidRaces.length)];
+    let newRaceData = humanoidRaces[randomNumber(0, humanoidRaces.length)];
   }
 
   // TODO choose name
