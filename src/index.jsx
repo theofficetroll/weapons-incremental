@@ -65,7 +65,9 @@ class Container extends React.Component {
   };
 
   handleAction = (command) => {
-    commandRouter(command);
+    newFunction = commandRouter(command);
+    // Run function built from commandRouter
+    // May just need to run setState with a returned object
   }
 
   // This is a stub

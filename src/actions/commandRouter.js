@@ -21,7 +21,7 @@ const commandRouter = (command) => {
       newHp = hp - ((fullDamage >= 0) ? fullDamage : 0)
       console.log(`${attacker} attacks for ${fullDamage} damage!`);
       // TODO Return object to update state
-      break;
+      return {};
     default:
       console.log('no specific command');
       break;
