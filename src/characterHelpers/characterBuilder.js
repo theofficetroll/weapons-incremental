@@ -1,6 +1,9 @@
 // This will hold main & helper functions to generate new characters
 // This will function the same for wielders and opponents
 
+// TODO
+// Create general random number function and replace throughout
+
 const newCharacter = (oldWielder, level) => {
   let newRace;
   if (oldWielder.raceType === 'humanoid') {
@@ -14,12 +17,14 @@ const newCharacter = (oldWielder, level) => {
     // Add race variation? If certain races never fight one another &c
     newRace = humanoidRaces[Math.floor(Math.random() * humanoidRaces.length)];
   }
-  let newClass = newRace[Math.floor(Math.random)];
-  // choose class from loaded race
+  let newClassName = newRace.classes[0];  // TODO currently just pulling first class
+
   // apply both race and class modifiers to get base stats
+
   // level up character using characterLeveler
+
   // return new character
-}
+};
 
 // The below will be moved out to data store later
 // just here temporarily for ease of access
@@ -82,9 +87,9 @@ const monsterRaces = [
   }
 ];
 
-const classes = [
-  {
-    class: 'fighter',
+const classes = {
+  fighter: {
+    name: 'fighter',
     levelZeroStats: {
       accuracy: 1,
       damageBonus: 1,
@@ -95,5 +100,24 @@ const classes = [
     levelModifiers: {
       // TODO Add modifiers to apply each level
     },
-  }
-];
+    skills: {
+      // TODO Add class-specific skills
+    },
+  },
+  wizard: {
+    name: 'wizard',
+    levelZeroStats: {
+      accuracy: 1,
+      damageBonus: 1,
+      defense: 1,
+      hp: 5,
+      speed: 2,
+    },
+    levelModifiers: {
+      // TODO Add modifiers to apply each level
+    },
+    skills: {
+      // TODO Add class-specific skills
+    },
+  },
+};
